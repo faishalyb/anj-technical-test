@@ -85,7 +85,8 @@ class _TakePicturePageState extends State<TakePicturePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Take a Picture'),
+        title: const Text('Back'),
+        backgroundColor: Colors.amber,
       ),
       body: Center(
         child: Column(
@@ -93,7 +94,7 @@ class _TakePicturePageState extends State<TakePicturePage> {
           children: [
             _imageFile != null
                 ? Image.file(_imageFile!)
-                : const Text('No image selected.'),
+                : Image.asset('assets/camera-placeholder.jpg'),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _capturePicture,

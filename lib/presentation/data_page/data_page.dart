@@ -2,6 +2,7 @@ import 'package:anj_techtest/presentation/data_page/method/picture_detail_page.d
 import 'package:anj_techtest/service/serivce_picture.dart';
 import 'package:flutter/material.dart';
 import 'package:anj_techtest/service/service_database.dart';
+import 'package:intl/intl.dart';
 
 class DataPage extends StatefulWidget {
   const DataPage({super.key});
@@ -22,6 +23,12 @@ class _DataPageState extends State<DataPage> {
   Future<List<PictureModel>> _fetchPictures() async {
     final databaseService = DatabaseService();
     return await databaseService.getPictures();
+  }
+
+  String _formatDateTime(String dateTime) {
+    final date = DateTime.parse(dateTime);
+    final formatter = DateFormat('dd-MM-yyyy HH:mm:ss');
+    return formatter.format(date);
   }
 
   @override
@@ -47,7 +54,7 @@ class _DataPageState extends State<DataPage> {
               itemBuilder: (context, index) {
                 final picture = pictures[index];
                 return ListTile(
-                  title: Text(picture.datetime),
+                  title: Text(' ${_formatDateTime(picture.datetime)}'),
                   onTap: () {
                     Navigator.push(
                       context,
