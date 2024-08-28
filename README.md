@@ -4,7 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is Technical Test.
+
+the result app is [here](https://drive.google.com/drive/folders/1IyTEvMqW-0mVIHcq18eTiFiJ-oISdhCd?usp=drive_link)
 
 A few resources to get you started if this is your first Flutter project:
 
