@@ -35,4 +35,19 @@ class DatabaseService {
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
+
+  Future<List<PictureModel>> getPictures() async {
+    final db = await database;
+    final List<Map<String, dynamic>> maps = await db.query('pictures');
+
+    return List.generate(maps.length, (i) {
+      return PictureModel(
+        id: maps[i]['id'],
+        imagePath: maps[i]['imagePath'],
+        latitude: maps[i]['latitude'],
+        longitude: maps[i]['longitude'],
+        datetime: maps[i]['datetime'],
+      );
+    });
+  }
 }
