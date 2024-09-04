@@ -1,3 +1,4 @@
+import 'package:anj_techtest/presentation/covid_bloc/covid_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:anj_techtest/presentation/api_covid/api_covid.dart';
 import 'package:anj_techtest/presentation/data_page/data_page.dart';
@@ -80,6 +81,25 @@ class HomePage extends StatelessWidget {
                 },
                 child: const Text(
                   'API Covid-19',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black), color: Colors.amber),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CovidBusinessLogicalScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'BLoc',
                   style: TextStyle(color: Colors.black),
                 ),
               ),
